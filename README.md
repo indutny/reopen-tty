@@ -12,7 +12,7 @@ Opening and using `/dev/tty` is trivial only on Unixes. Windows has a
 On Unixes it just opens `/dev/tty` and passes it to `tty.ReadStream` or
 `tty.WriteStream` depending on the desired tty kind.
 
-On Windows it opens `conin$`/`conout$`/`conerr$` using Node.js internals, and
+On Windows it opens `conin$`/`conout$` using Node.js internals, and
 passes them to `tty.ReadStream`/`tty.WriteStream`.
 
 ## Installation

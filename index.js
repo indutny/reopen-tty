@@ -9,8 +9,7 @@ if (process.platform === 'win32') {
 
   // Synchronous, but who cares?
   openTTY = (kind, callback) => {
-    const name = kind === 'stdin' ? 'conin$' :
-                 kind === 'stdout' ? 'conout$' : 'conerr$';
+    const name = kind === 'stdin' ? 'conin$' : 'conout$';
     try {
       callback(null, fs.open(name, constants.O_RDWR | constants.O_EXCL, 0o666));
     } catch (e) {
