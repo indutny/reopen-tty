@@ -1,0 +1,30 @@
+{
+  "name": "reopen-tty",
+  "version": "1.0.0",
+  "description": "A small library to open /dev/tty in a cross-platform way",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/reopen-tty.git"
+  },
+  "keywords": [
+    "reopen",
+    "tty",
+    "conin",
+    "conout",
+    "/dev/tty",
+    "windows"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/reopen-tty/issues"
+  },
+  "homepage": "https://github.com/indutny/reopen-tty#readme",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
