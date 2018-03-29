@@ -1,22 +1,22 @@
 'use strict';
 
+const fs = require('fs');
 const tty = require('tty');
 
 let openTTY;
 if (process.platform === 'win32') {
-  const fs = process.binding('fs');
+  const cfs = process.binding('fs');
 
   // Synchronous, but who cares?
   openTTY = (kind, callback) => {
     const name = kind === 'stdin' ? 'conin$' : 'conout$';
     try {
-      callback(null, fs.open(name, fs.constants.O_RDWR | fs.constants.O_EXCL, 0o666));
+      callback(null, cfs.open(name, fs.constants.O_RDWR | fs.constants.O_EXCL, 0o666));
     } catch (e) {
       callback(e);
     }
   };
 } else {
-  const fs = require('fs');
 
   openTTY = (kind, callback) => {
     fs.open('/dev/tty', 'r+', callback);
